@@ -24,7 +24,7 @@ def load_dict(filepath: str) -> dict:
     Returns:
         Dict: loaded JSON data.
     """
-    with open(filepath) as fp:
+    with open(filepath, encoding="utf-8") as fp:
         d = json.load(fp)
     return d
 
@@ -56,9 +56,9 @@ def merge_csvs(input_files, output_file, n_header=1) -> None:
         n_header (int, optional): number of header lines to skip. Defaults to 1.
     """
 
-    with open(output_file, "w") as f_out:
+    with open(output_file, "w", encoding="utf-8") as f_out:
         for i, input_file in enumerate(input_files):
-            with open(input_file, "r") as f_in:
+            with open(input_file, "r", encoding="utf-8") as f_in:
                 ith_header = ""
                 for j in range(n_header):
                     ith_header += f_in.readline()

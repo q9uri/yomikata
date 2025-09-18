@@ -57,7 +57,7 @@ TEST_SIZE = 0.15
 assert TRAIN_SIZE + VAL_SIZE + TEST_SIZE == 1
 
 # Heteronym list
-with open(Path(CONFIG_DIR, "heteronyms.json")) as fp:
+with open(Path(CONFIG_DIR, "heteronyms.json"), encoding="utf-8") as fp:
     HETERONYMS = json.load(fp)
 
 # Logger

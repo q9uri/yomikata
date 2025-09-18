@@ -16,7 +16,7 @@ warnings.filterwarnings("ignore")
 
 
 def read_knp_file(filename: str):
-    with open(filename) as f:
+    with open(filename, encoding="utf-8") as f:
         contents = f.readlines()
 
     ids = []

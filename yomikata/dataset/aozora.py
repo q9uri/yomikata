@@ -18,7 +18,7 @@ warnings.filterwarnings("ignore")
 
 def read_file(file: str):
     # logger.info("reading file")
-    with open(file) as f:
+    with open(file, encoding="utf-8") as f:
         rows = [line.rstrip("\n").rstrip("\r").split("\t")[0:3] for line in f.readlines()]
     df = pd.DataFrame(rows, columns=["word", "furigana", "type"])
 
@@ -86,7 +86,7 @@ def aozora_data():
     # Extract sentences from the data files
     files = list(Path(config.RAW_DATA_DIR, "aozora").glob("*/*/*.txt"))
 
-    with open(Path(config.SENTENCE_DATA_DIR, "aozora.csv"), "w") as f:
+    with open(Path(config.SENTENCE_DATA_DIR, "aozora.csv"), "w", encoding="utf-8") as f:
         f.write("sentence,furigana,sentenceid\n")
 
     for i, file in enumerate(files):
