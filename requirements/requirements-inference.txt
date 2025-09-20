@@ -1,6 +1,6 @@
 numpy==1.26.4
 pandas>=1.5.2
-jaconv
+jaconv==0.4.0
 scikit-learn
 speach
 torch
